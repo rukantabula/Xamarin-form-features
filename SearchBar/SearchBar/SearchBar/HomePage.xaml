@@ -2,12 +2,49 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SearchBar.HomePage"
-             BackgroundColor="Silver"
+             BackgroundColor="Black"
              Title="SearchBar">
   <StackLayout>
     <SearchBar x:Name="MainSearchBar"
                SearchButtonPressed="MainSearchBar_OnSearchButtonPressed"/>
-    <ListView x:Name="MainListView" />
+    
+    
+    <ListView x:Name="MainListView" 
+              HasUnevenRows="True"
+              Header=""
+              Footer="">
+      <ListView.HeaderTemplate>
+        <DataTemplate>
+            <Grid Padding="12">
+              <Label Text="The Header"
+                     TextColor="White"
+                     FontSize="15"
+                     BackgroundColor="Gray"/>
+            </Grid>
+        </DataTemplate>
+      </ListView.HeaderTemplate>
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <Grid Padding="12">
+              <Label Text="{Binding .}"
+                     FontSize="15"/>
+            </Grid>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+
+      <ListView.FooterTemplate>
+        <DataTemplate>
+          <Grid Padding="12">
+            <Label Text="The Footer"
+                   TextColor="Blue"
+                   FontSize="15"
+                   BackgroundColor="Gray"/>
+          </Grid>
+        </DataTemplate>
+      </ListView.FooterTemplate>
+    </ListView>
     
   </StackLayout>
 </ContentPage>
