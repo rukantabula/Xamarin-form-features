@@ -37,5 +37,48 @@ namespace SearchBar
             MainListView.ItemsSource = searchResult; 
         }
 
+        private void Add_OnClicked(object sender, EventArgs e)
+        {
+            var menuItem = sender as MenuItem;
+
+            if (menuItem != null)
+            {
+
+                var name = menuItem.BindingContext as string;
+
+                DisplayAlert("Alert", "Do you want to Add " + name + "?", "OK", "Cancel");
+            }
+        }
+
+        private void Edit_OnClicked(object sender, EventArgs e)
+        {
+
+            var menuItem = sender as MenuItem;
+
+            if (menuItem != null)
+            {
+
+                var name = menuItem.BindingContext as string;
+
+                DisplayAlert("Alert", "Do you want to Edit " + name + "?", "OK", "Cancel");
+            }
+
+        }
+
+        private void Delete_OnClicked(object sender, EventArgs e)
+        {
+
+            var menuItem = sender as MenuItem;
+
+            if (menuItem != null)
+            {
+
+                var name = menuItem.BindingContext as string;
+
+                DisplayAlert("Alert", "Do you want to Delete " + name + "?", "OK", "Cancel");
+            }
+
+        }
+
     }
 }

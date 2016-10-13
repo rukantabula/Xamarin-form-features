@@ -26,6 +26,20 @@
       <ListView.ItemTemplate>
         <DataTemplate>
           <ViewCell>
+            <ViewCell.ContextActions>
+              <MenuItem Text="Add"
+                        Clicked="Add_OnClicked"
+                        CommandParameter="{Binding .}"/>
+
+              <MenuItem Text="Edit"
+                        Clicked="Edit_OnClicked"
+                        CommandParameter="{Binding .}"/>
+
+              <MenuItem Text="Delete"
+                      Clicked="Delete_OnClicked"
+                        CommandParameter="{Binding .}"/>
+              
+            </ViewCell.ContextActions>
             <Grid Padding="12">
               <Label Text="{Binding .}"
                      FontSize="15"/>
